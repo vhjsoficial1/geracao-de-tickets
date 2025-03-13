@@ -5,8 +5,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../assets/images/background-desktop.png') no-repeat center
-    center;
+  background: url('../assets/images/background-desktop.png');
   background-size: cover;
   position: relative;
 }
@@ -26,18 +25,19 @@ body {
 
 .overlay-1 {
   /*Circle Top Left*/
-  top: -12%;
-  left: 3.5%;
+  top: -100px;
+  left: 100px;
 }
 
 .overlay-2 {
   /*Circle Middle Right*/
-  top: 60%;
-  right: 30%;
+  top: 50%;
+  right: 350px;
 }
 
 .overlay-3 {
   /*Lines*/
+  width: 100%;
   top: 0%;
   left: 50%;
   transform: translateX(-50%);
@@ -45,13 +45,12 @@ body {
 
 .overlay-4 {
   /*Squiggly line 3*/
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
+  bottom: 0;
+  left: 0;
 }
 
 .overlay-5 {
   /*Squiggly line 2*/
-  top: 10%;
+  top: 100px;
   right: 0%;
 }
