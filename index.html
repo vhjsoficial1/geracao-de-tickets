@@ -13,7 +13,7 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution a { color: rgb(62, 82, 163); }
   </style>
 </head>
 
@@ -24,54 +24,30 @@
     <img src="assets/images/pattern-lines.svg" class="overlay overlay-3">
     <img src="assets/images/pattern-squiggly-line-bottom-desktop.svg" class="overlay overlay-4">
     <img src="assets/images/pattern-squiggly-line-top.svg" class="overlay overlay-5">
-</div>
+  </div>
 
   <div class="container">
     <header class="header">
       <div class="logo">
         <img src="assets/images/logo-full.svg" alt="Coding Conf Logo">
       </div>
-      <h1 class="header-title">Your Journey to Coding Conf 2025 Starts Here!<br></h1>
+      <h1 class="header-title">Your Journey to Coding Conf <br> 2025 Starts Here!</h1>
       <div class="header-subtitle"><p>Secure your spot at next year's biggest coding conference.</p></div>
     </header>
 
-    <div class="form">
+    <div class="upload-container">
       <h3 class="upload-title">Upload Avatar</h3>
-        <div class="upload-box">
-          <input type="file" accept="image/png, image/jpeg" class="upload-box-input">
-          <img src="assets/images/icon-upload.svg" alt="Upload Icon" class="upload-box-avatar">
-        </div>
+      <label for="file-upload" class="upload-box">
+          <div class="upload-icon-container">
+              <img src="assets/images/icon-upload.svg" alt="Upload Icon" class="upload-icon">
+          </div>
+          <p class="upload-text">Drag and drop or click to upload</p>
+          <input type="file" id="file-upload" accept="image/png, image/jpeg" class="upload-input">
+      </label>
+      <p class="upload-info">🛈 Upload your photo (JPG or PNG, max size: 500KB).</p>
     </div>
+  
   </div>
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
-  
-  Full Name
-  
-  Email Address
-  example@email.com
-  
-  GitHub Username
-  @yourusername
-  
-  Generate My Ticket
-  
-  <!-- Form ends -->
 
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">vhjsoficial1</a>.
-  </div>
 </body>
 </html>
