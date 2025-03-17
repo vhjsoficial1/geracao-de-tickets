@@ -53,7 +53,7 @@ body {
   /*Squiggly line 3*/
   bottom: 0;
   left: 0;
-  width: 70%;
+  width: 30%;
 }
 
 .overlay-5 {
@@ -171,4 +171,55 @@ body {
 .upload-info {
   font-weight: 300;
   color:rgb(255, 255, 255);
+}
+
+.form {
+  margin: 1.7rem 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin-top: 1.2rem;
+}
+
+.form-label {
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+.form-input {
+  color: rgb(210, 209, 214);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 15px;
+  background: rgba(75, 72, 106, 0.15);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgb(255, 255, 255);
+  transition: all 0.25s ease-in;
+}
+
+.submit-btn {
+  background-color: rgb(225, 97, 81);
+  font-size: 0.9rem;
+  font-weight: 700;
+  width: 100%;
+  padding: 15px;
+  color: #25252b;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.submit-btn:active {
+  transform: scale(1.03);
 }
