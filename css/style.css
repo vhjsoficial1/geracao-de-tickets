@@ -105,6 +105,7 @@ body {
   display: flex;
   flex-direction: column;
   color: aliceblue;
+  margin: 1.7rem 0;
 }
 
 .upload-container {
@@ -123,26 +124,53 @@ body {
 
 .upload-box {
   width: 100%;
-  max-width: 450px;
   height: 140px;
-  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border: 1.5px dashed rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .upload-box:hover {
   background: rgba(75, 72, 106, 0.55);
   outline: 1px solid rgba(135, 132, 164, 0.55);
-  transition: all 0.25s ease-in;
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.preview-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  position: absolute;
+  margin: 0 auto;
 }
 
 .upload-icon-container {
+  position: static;
+  z-index: 2;
+  margin-top: 0;
   width: 50px;
   height: 50px;
   background: rgba(255, 255, 255, 0.1);
@@ -150,18 +178,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  transition: opacity 0.3s ease;
 }
 
 .upload-icon {
   width: 36px;
   height: 36px;
+  transition: opacity 0.3s ease;
 }
 
 .upload-text {
+  position: relative;
+  z-index: 2;
   font-size: 20px;
   font-weight: 500;
   text-align: center;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
 }
 
 .upload-input {
@@ -170,11 +203,30 @@ body {
 
 .upload-info {
   font-weight: 300;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
-.form {
-  margin: 1.7rem 0;
+/* Quando há imagem carregada */
+.upload-box.has-preview {
+  border-style: solid;
+  background: rgba(75, 72, 106, 0.25);
+}
+
+.upload-box.has-preview .preview-image {
+  display: block;
+  margin-top: 7.5%;
+}
+
+.upload-box.has-preview .upload-icon-container,
+.upload-box.has-preview .upload-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.upload-box.has-preview:hover .preview-image {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  
 }
 
 .form-group {
@@ -222,4 +274,138 @@ body {
 
 .submit-btn:active {
   transform: scale(1.03);
+}
+
+/* Estrutura principal */
+.ticket {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.ticket-header {
+  margin-bottom: 2rem;
+}
+
+/* Header do ticket */
+.confirmation-message {
+  display: inline-block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 2rem;
+  color: rgb(255, 255, 255);
+}
+
+.confirmation-message-name, .email-info-email {
+  background-image: linear-gradient(
+    to right,
+    #FF6B35 0%,
+    #ff7300 20%,
+    rgba(255,255,255,0.8) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  -webkit-text-fill-color: transparent;
+}
+
+.email-info {
+  color: rgb(135, 132, 164);
+  display: inline-block;
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+
+
+/* Corpo do ticket com posicionamento relativo */
+.ticket-body {
+  position: relative;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.ticket-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Elementos sobrepostos */
+.ticket-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12%;
+}
+
+.ticket-corner-logo {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 20%;
+  max-width: 100px;
+}
+
+.event-date-location {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.ticket-user-info {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ticket-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user-details {
+  text-align: left;
+  color: #fff;
+}
+
+.user-fullname {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.user-github {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.ticket-code {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.attribution {
+  padding: 10px;
+  font-size: 1.15rem;
+  z-index: 20;
+  color: aliceblue;
 }
