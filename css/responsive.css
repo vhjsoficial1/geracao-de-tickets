@@ -56,9 +56,14 @@
       max-width: 90%;
     }
   
+    .ticket-logo {
+      width: 250%;
+      height: 250%;
+    }
+
     .event-date-location {
-      font-size: 1rem;
-      top: 12%;
+      font-size: 0.8rem;
+      top: 20%;
       left: 10%;
     }
   
@@ -67,8 +72,8 @@
     }
   
     .ticket-avatar {
-      width: 80px;
-      height: 80px;
+      width: 50px;
+      height: 50px;
     }
   
     .user-fullname {
